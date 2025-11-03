@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Products - XYZ</title>
+  <meta name="description" content="Products & Services">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="products">
+  <div id="header-placeholder"></div>
+  <script src="js/include.js"></script>
+  <script>includeHTML('#header-placeholder', 'header.html'));</script>
+
+  <main class="products-section container" role="main" aria-label="products">
+    <h2>Products & Services</h2>
+    <p class="lead">Choose a category to explore tools, utilities and official services.</p>
+
+    <div class="aadhar-category" aria-labelledby="aadhar-title">
+      <h3 id="aadhar-title">Aadhar services</h3>
+      <p class="small">Category contains services related to Aadhaar.</p>
+      <div style="margin:12px 0;">
+        <input id="products-search-input" type="search" placeholder="Filter this category..." aria-label="Filter products">
+      </div>
+      <ul id="products-list" class="aadhar-list">
+        <li><a href="e-aadhaar.html">e Aadhar</a></li>
+        <li><a href="#">Aadhar status</a></li>
+        <li><a href="#">Aadhar pvc</a></li>
+      </ul>
+    </div>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>includeHTML('#footer-placeholder', 'footer.html'));</script>
+
+  <script src="js/script.js"></script>
+  <script>initProductsPageSearch();</script>
+</body>
+</html>
