@@ -2,14 +2,26 @@
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Disclaimer - XYZ</title><link rel="stylesheet" href="css/style.css"></head>
 <body data-page="disclaimer">
-  <div id="header-placeholder"></div><script src="js/include.js"></script><script>includeHTML('#header-placeholder', 'header.html'));</script>
+  <div id="header-placeholder"></div><script src="js/include.js"></script>
 
   <section class="about-content container" style="padding:32px 0;">
     <h2>Disclaimer</h2>
     <p>All content is for informational purposes only. We are not affiliated with government agencies.</p>
   </section>
 
-  <div id="footer-placeholder"></div><script>includeHTML('#footer-placeholder', 'footer.html'));</script>
+  <div id="footer-placeholder"></div>
   <script src="js/script.js"></script>
+
+  <script src="js/include.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    (async ()=>{
+      await includeHTML('#header-placeholder','header.html');
+      await includeHTML('#footer-placeholder','footer.html');
+      const page = document.body.getAttribute('data-page') || '';
+      if(page === 'home') initHomeSearch();
+      if(page === 'products') initProductsPageSearch();
+    })();
+  </script>
 </body>
 </html>

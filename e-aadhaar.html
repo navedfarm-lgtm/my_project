@@ -9,7 +9,7 @@
 <body data-page="products">
   <div id="header-placeholder"></div>
   <script src="js/include.js"></script>
-  <script>includeHTML('#header-placeholder', 'header.html'));</script>
+  
 
   <main class="container" style="padding:28px 0;">
     <h1>e-Aadhaar Download Guide</h1>
@@ -27,7 +27,7 @@
       <div class="video-section" style="margin-top:16px;">
         <div class="video-wrapper">
           <!-- Embedded YouTube tutorial (user can replace with their chosen video) -->
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="e-Aadhaar tutorial" allowfullscreen></iframe>
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/z5nJKH3uA74" title="How to download e-Aadhaar from UIDAI website?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -35,8 +35,20 @@
   </main>
 
   <div id="footer-placeholder"></div>
-  <script>includeHTML('#footer-placeholder', 'footer.html'));</script>
+  
 
   <script src="js/script.js"></script>
+
+  <script src="js/include.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    (async ()=>{
+      await includeHTML('#header-placeholder','header.html');
+      await includeHTML('#footer-placeholder','footer.html');
+      const page = document.body.getAttribute('data-page') || '';
+      if(page === 'home') initHomeSearch();
+      if(page === 'products') initProductsPageSearch();
+    })();
+  </script>
 </body>
 </html>

@@ -4,3 +4,16 @@
     <p class="small">Designed and maintained by XYZ Pvt. Ltd. — For official government links use only verified portals.</p>
   </div>
 </footer>
+  <script src="js/include.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    (async ()=>{
+      await includeHTML('#header-placeholder','header.html');
+      await includeHTML('#footer-placeholder','footer.html');
+      const page = document.body.getAttribute('data-page') || '';
+      if(page === 'home') initHomeSearch();
+      if(page === 'products') initProductsPageSearch();
+    })();
+  </script>
+</body>
+</html>

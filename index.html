@@ -9,7 +9,7 @@
 <body data-page="home">
   <div id="header-placeholder"></div>
   <script src="js/include.js"></script>
-  <script>includeHTML('#header-placeholder', 'header.html'));</script>
+  
 
   <main class="hero container" role="main" aria-label="homepage">
     <h1 class="brand-logo"><span class="letter-x">X</span><span class="letter-y">Y</span><span class="letter-z">Z</span></h1>
@@ -40,9 +40,21 @@
   </main>
 
   <div id="footer-placeholder"></div>
-  <script>includeHTML('#footer-placeholder', 'footer.html'));</script>
+  
 
   <script src="js/script.js"></script>
   <script>initHomeSearch();</script>
+
+  <script src="js/include.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    (async ()=>{
+      await includeHTML('#header-placeholder','header.html');
+      await includeHTML('#footer-placeholder','footer.html');
+      const page = document.body.getAttribute('data-page') || '';
+      if(page === 'home') initHomeSearch();
+      if(page === 'products') initProductsPageSearch();
+    })();
+  </script>
 </body>
 </html>

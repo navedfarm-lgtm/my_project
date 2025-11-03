@@ -9,7 +9,7 @@
 <body data-page="products">
   <div id="header-placeholder"></div>
   <script src="js/include.js"></script>
-  <script>includeHTML('#header-placeholder', 'header.html'));</script>
+  
 
   <main class="products-section container" role="main" aria-label="products">
     <h2>Products & Services</h2>
@@ -31,9 +31,21 @@
   </main>
 
   <div id="footer-placeholder"></div>
-  <script>includeHTML('#footer-placeholder', 'footer.html'));</script>
+  
 
   <script src="js/script.js"></script>
   <script>initProductsPageSearch();</script>
+
+  <script src="js/include.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    (async ()=>{
+      await includeHTML('#header-placeholder','header.html');
+      await includeHTML('#footer-placeholder','footer.html');
+      const page = document.body.getAttribute('data-page') || '';
+      if(page === 'home') initHomeSearch();
+      if(page === 'products') initProductsPageSearch();
+    })();
+  </script>
 </body>
 </html>
